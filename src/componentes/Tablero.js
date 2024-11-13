@@ -4,6 +4,8 @@ import Carta from './Carta';
 const Tablero = () => {
     const [cartas, setCartas] = useState([]);
     const [cartasGiradas, setCartasGiradas] = useState([]);
+    const [primerIndice, setPrimerIndice] = useState(null);
+    const [segundoIndice, setSegundoIndice] = useState(null);
 
     useEffect(() => {
         const cartasIniciales = [
@@ -13,19 +15,51 @@ const Tablero = () => {
         setCartas(cartasIniciales);
     })
 
+
+
     const clickCarta = (indice) => {
-        const nuevasCartasGiradas = [...cartasGiradas, indice];
-        setCartasGiradas =nuevasCartasGiradas
-    }
 
-    if(nuevasCartasGiradas.length === 2){
-        const [primerIndice, segundoIndice] = nuevasCartasGiradas;
-        if (cartas[primerIndice].contenido === cartas[segundoIndice].contenido){
-            setCartas((cartasPrevias) =>
-            cartasPrevias.map((carta,i) =>
-            )
-            )
+        if (cartasGiradas.length === 0) {
+            setCartasGiradas([indice]);
+            setPrimerIndice(indice);
+        } 
+        else if (cartasGiradas.length === 1) {
+
+            setCartasGiradas([...cartasGiradas, indice]);
+            setSegundoIndice(indice);
+    
+          const primeraCarta = cartas[primerIndice];
+          const segundaCarta = cartas[indice];
+
+          if (primeraCarta.contenido === segundaCarta.contenido) {
+            actualizarCartas(cartas);
+          } 
         }
-    }
+    };
 
-}
+
+
+    const actualizarCartas = (cartasActuales) => {
+    const nuevasCartas = cartasActuales.map((carta, indice) => {
+
+      if (indice === primerIndice || indice === segundoIndice) {
+        return { ...carta, emparejada: true };
+      } else {
+        return carta;
+      }
+    });
+    setCartas(nuevasCartas);
+  };
+  return (
+    <div className="tablero">
+      {cartas.map((carta, indice) => (
+        <Carta
+          key={carta.id}
+          imagen={carta.imagen}
+          volteada={cartasVolteadas.includes(indice) || carta.emparejada}
+          alHacerClick={() => manejarClickCarta(indice)}
+        />
+      ))}
+    </div>
+  );
+};
