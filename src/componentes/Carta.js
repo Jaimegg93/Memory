@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Carta = ({ contenido, girada, onClick }) => {
+const Carta = ({ imagen, volteada, alHacerClick }) => {
   return (
-    <div className="carta" onClick={onClick}>
-      {girada ? contenido : "?"}
+    <div className="carta" onClick={alHacerClick}>
+      {volteada ? (
+        <img src={imagen} alt="Carta" />
+      ) : (
+        <img src="/imagenes/carta.jpg" alt="Carta Boca Abajo" />
+      )}
     </div>
   );
 };

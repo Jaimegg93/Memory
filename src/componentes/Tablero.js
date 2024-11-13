@@ -8,12 +8,15 @@ const Tablero = () => {
     const [segundoIndice, setSegundoIndice] = useState(null);
 
     useEffect(() => {
-        const cartasIniciales = [
-            {id: 1, contenido: 'A'}, {id: 2, contenido: 'A'}, 
-            {id: 3, contenido: 'B'}, {id: 4, contenido: 'B'}
-        ];
+      const cartasIniciales = [
+        { id: 1, contenido: 'A', imagen: '/imagenes/anuel.jpg', emparejada: false },
+        { id: 2, contenido: 'A', imagen: '/imagenes/anuel.jpg', emparejada: false },
+        { id: 3, contenido: 'B', imagen: '/imagenes/anuel.jpg', emparejada: false },
+        { id: 4, contenido: 'B', imagen: '/imagenes/anuel.jpg', emparejada: false }
+      ];
+    
         setCartas(cartasIniciales);
-    })
+    }, []);
 
 
 
@@ -55,7 +58,7 @@ const Tablero = () => {
         <Carta
           key={carta.id}
           imagen={carta.imagen}
-          volteada={cartasGiradas.includes(indice) || carta.emparejada}
+          girada={cartasGiradas.includes(indice) || carta.emparejada}
           alHacerClick={() => clickCarta(indice)}
         />
       ))}
