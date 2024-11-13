@@ -37,8 +37,6 @@ const Tablero = () => {
         }
     };
 
-
-
     const actualizarCartas = (cartasActuales) => {
     const nuevasCartas = cartasActuales.map((carta, indice) => {
 
@@ -50,16 +48,19 @@ const Tablero = () => {
     });
     setCartas(nuevasCartas);
   };
+
   return (
     <div className="tablero">
       {cartas.map((carta, indice) => (
         <Carta
           key={carta.id}
           imagen={carta.imagen}
-          volteada={cartasVolteadas.includes(indice) || carta.emparejada}
-          alHacerClick={() => manejarClickCarta(indice)}
+          volteada={cartasGiradas.includes(indice) || carta.emparejada}
+          alHacerClick={() => clickCarta(indice)}
         />
       ))}
     </div>
   );
 };
+
+export default Tablero;
