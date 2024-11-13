@@ -12,4 +12,20 @@ const Tablero = () => {
         ];
         setCartas(cartasIniciales);
     })
+
+    const clickCarta = (indice) => {
+        const nuevasCartasGiradas = [...cartasGiradas, indice];
+        setCartasGiradas =nuevasCartasGiradas
+    }
+
+    if(nuevasCartasGiradas.length === 2){
+        const [primerIndice, segundoIndice] = nuevasCartasGiradas;
+        if (cartas[primerIndice].contenido === cartas[segundoIndice].contenido){
+            setCartas((cartasPrevias) =>
+            cartasPrevias.map((carta,i) =>
+            )
+            )
+        }
+    }
+
 }
