@@ -25,17 +25,22 @@
 }
 
 .card-front img {
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .card-back {
-  background-color: #000;
+  background-color: #ffffff;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   transform: rotateY(0deg);
+}
+
+.card-back img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .card.flipped .card-front {

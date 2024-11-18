@@ -11,10 +11,10 @@ function Card({ card, onClick }) {
   return (
     <div className={`card ${card.flipped ? 'flipped' : ''}`} onClick={handleClick}>
       <div className="card-front">
-        {card.value}
+      <img src={`/imagenes/${card.value}.jpg`}/>
       </div>
       <div className="card-back">
-        ?
+      <img src={"/imagenes/carta.jpg"}/>
       </div>
     </div>
   );

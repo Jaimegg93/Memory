@@ -7,7 +7,11 @@ const initialCards = [
   { id: 2, value: 'A', flipped: false, matched: false },
   { id: 3, value: 'B', flipped: false, matched: false },
   { id: 4, value: 'B', flipped: false, matched: false },
-  // Añade más pares de cartas según sea necesario
+  { id: 5, value: 'C', flipped: false, matched: false },
+  { id: 6, value: 'C', flipped: false, matched: false },
+  { id: 7, value: 'D', flipped: false, matched: false },
+  { id: 8, value: 'D', flipped: false, matched: false },
+  
 ];
 
 function Board() {
