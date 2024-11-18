@@ -1,15 +1,14 @@
-// src/App.js
 import React from 'react';
+import Board from './componentes/Board';
 import './App.css';
-import Tablero from './componentes/Tablero';
 
-const App = () => {
+function App() {
   return (
     <div className="App">
-      <h1>Memory</h1>
-      <Tablero />
+      <h1>Juego de Memory</h1>
+      <Board />
     </div>
   );
-};
+}
 
 export default App;
