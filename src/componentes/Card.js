@@ -14,7 +14,7 @@ function Card({ card, onClick }) {
       <img src={`/imagenes/${card.value}.jpg`}/>
       </div>
       <div className="card-back">
-      <img src={"/imagenes/carta.jpg"}/>
+      <img src={"/imagenes/carta.png"}/>
       </div>
     </div>
   );

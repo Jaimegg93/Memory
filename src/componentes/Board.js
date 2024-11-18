@@ -11,7 +11,10 @@ const initialCards = [
   { id: 6, value: 'C', flipped: false, matched: false },
   { id: 7, value: 'D', flipped: false, matched: false },
   { id: 8, value: 'D', flipped: false, matched: false },
-  
+  { id: 9, value: 'E', flipped: false, matched: false },
+  { id: 10, value: 'E', flipped: false, matched: false },
+  { id: 11, value: 'F', flipped: false, matched: false },
+  { id: 12, value: 'F', flipped: false, matched: false }
 ];
 
 function Board() {
